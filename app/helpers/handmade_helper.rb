@@ -1,0 +1,2 @@
+module HandmadeHelper
+end

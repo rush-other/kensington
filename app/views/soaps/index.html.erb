@@ -1,0 +1,28 @@
+<h1>Listing soaps</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Ingredients</th>
+    <th>Size</th>
+    <th>Price</th>
+  </tr>
+
+<% for soap in @soaps %>
+  <tr>
+    <td><%=h soap.name %></td>
+    <td><%=h soap.description %></td>
+    <td><%=h soap.ingredients %></td>
+    <td><%=h soap.size %></td>
+    <td><%=h soap.price %></td>
+    <td><%= link_to 'Show', soap %></td>
+    <td><%= link_to 'Edit', edit_soap_path(soap) %></td>
+    <td><%= link_to 'Destroy', soap, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New soap', new_soap_path %>

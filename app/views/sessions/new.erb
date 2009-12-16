@@ -1,0 +1,11 @@
+<title>Login</title>
+<div class="login">
+	<p>Username:&nbsp;&nbsp;&nbsp;<%= @user.name %></span></p>
+	
+	<% form_tag session_path do %>
+	<p>Password:&nbsp;&nbsp;&nbsp;&nbsp;<%= password_field_tag :password %>
+	<%= submit_tag "Login" %>
+	<% end %>
+	</p>
+</div>
+

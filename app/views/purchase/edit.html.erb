@@ -1,0 +1,17 @@
+<h1>Editing purchase</h1>
+
+<%= error_messages_for :purchase %>
+
+<% form_for(@purchase) do |f| %>
+  <p>
+    <b>Content</b><br />
+    <%= f.text_area :content %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @purchase %> |
+<%= link_to 'Back', purchases_path %>

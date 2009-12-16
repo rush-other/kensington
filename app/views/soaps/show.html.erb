@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @soap.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @soap.description %>
+</p>
+
+<p>
+  <b>Ingredients:</b>
+  <%=h @soap.ingredients %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%=h @soap.size %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @soap.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_soap_path(@soap) %> |
+<%= link_to 'Back', soaps_path %>

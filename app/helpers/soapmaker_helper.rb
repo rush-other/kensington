@@ -1,0 +1,2 @@
+module SoapmakerHelper
+end

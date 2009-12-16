@@ -1,0 +1,45 @@
+<div class="purchase_item">
+	<div>
+	  <b class="purchase_items_box">
+	  <b class="purchase_items_box1"><b></b></b>
+	  <b class="purchase_items_box2"><b></b></b>
+	  <b class="purchase_items_box3"></b>
+	  <b class="purchase_items_box4"></b>
+	  <b class="purchase_items_box5"></b></b>
+	  <div class="purchase_items_boxfg">
+	   <div class="purchase_item_internal">
+			         <p class="item_name"><%= soap.name %> - <%= soap.size %></p>
+					 <p class="item_description"><%= soap.description %></p>
+			 		 <p class="item_ingredients"><span class="item_ingredients_header">Ingredients: </span><%= soap.ingredients %></p>
+					 <p class="item_buy">
+					<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+					<input type="hidden" name="on0" value="Quantity"><span class="item_price">$<%= sprintf("%0.2f", soap.price) %></span> <select name="os0"><option value="1">1<option value="2">2<option value="3">3<option value="4">4<option value="5">5<option value="6">6<option value="7">7<option value="8">8<option value="9">9<option value="10 ">10 <option value="11">11<option value="12">12</select>
+					<input type="image" class="add_to_cart" src="/images/add_to_cart.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+					<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+					<input type="hidden" name="add" value="1">
+					<input type="hidden" name="cmd" value="_cart">
+					<input type="hidden" name="business" value="soapmaker@kensingtonsoapworks.com">
+					<input type="hidden" name="item_name" value="<%= soap.name %>">
+					<input type="hidden" name="amount" value="<%= soap.price %>">
+					<input type="hidden" name="page_style" value="Paypal">
+					<input type="hidden" name="shipping" value="5.00">
+					<input type="hidden" name="no_shipping" value="2">
+					<input type="hidden" name="currency_code" value="USD">
+					<input type="hidden" name="lc" value="US">
+					<input type="hidden" name="bn" value="PP-ShopCartBF">
+					</form>
+					</p>
+					</div>
+					  </div>
+	  <b class="purchase_items_box">
+	  <b class="purchase_items_box5"></b>
+	  <b class="purchase_items_box4"></b>
+	  <b class="purchase_items_box3"></b>
+	  <b class="purchase_items_box2"><b></b></b>
+	  <b class="purchase_items_box1"><b></b></b></b>
+	</div>
+		<% if admin? %>
+		<div class="edit_delete">[ <%= link_to "Edit", edit_soap_path(soap) %> <%= soap.name %> ] [ <%= link_to "Delete", soap_path(soap), :confirm => 'Are you sure?', :method => :delete %> <%= soap.name %> ]</div><!-- /edit_delete -->
+		<% end %>
+</div><!-- /purchase item -->
+

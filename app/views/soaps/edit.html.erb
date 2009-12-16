@@ -1,0 +1,38 @@
+<head>
+<style type="text/css">
+.div_2 {
+	background-color: #EDE7D0;
+	border: 1px solid #6D7B5D;
+	position: relative; left: 9px; top: 54px;
+	height: 80%;
+	width: 97.75%;
+	overflow: auto;
+}
+</style>
+</head>
+<%= error_messages_for :soap %>
+
+<div class="soap_edit">
+  <% form_for(@soap) do |f| %>
+  <p class="edit_field">Name: </p>
+    <p><%= f.text_field :name %></p>
+ 
+
+  <p class="edit_field">Description:</p>
+    <p><%= f.text_area :description %></p>
+
+
+  <p class="edit_field">Ingredients:</p>
+  <p><%= f.text_field :ingredients %></p>
+
+  <p class="edit_field">Size:</p>
+  <p><%= f.text_field :size %></p>
+
+  <p class="edit_field">Price:</p> 
+  <p>$<%= f.text_field :price %></p>
+
+  <p class="edit_field">
+    <%= f.submit "Update Item" %>
+  </p>
+<% end %>
+</div>
