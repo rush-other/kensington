@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   
   def admin?
     @user = User.find(:first)
-    session[:password] == @user.password 
+    @user && session[:password] == @user.password 
   end
 
   # See ActionController::RequestForgeryProtection for details
